@@ -13,7 +13,7 @@ function Dashboard() {
   const handleCreateRoom = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/room/create", {}, {
+      const res = await axios.post("https://collaborative-whiteboard-vsed.onrender.com/api/room/create", {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -35,7 +35,7 @@ function Dashboard() {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/room/join",
+      const res = await axios.post("https://collaborative-whiteboard-vsed.onrender.com/api/room/join",
         { roomId: joinRoomId },
         {
           headers: {

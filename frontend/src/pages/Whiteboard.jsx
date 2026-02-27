@@ -49,7 +49,7 @@ function Whiteboard() {
   /* ================= INIT SOCKET & CANVAS ================= */
   useEffect(() => {
     // Connect Socket
-    socket = io("http://localhost:5000");
+    socket = io("https://collaborative-whiteboard-vsed.onrender.com");
 
     socket.emit("join-room", { roomId, userId: user?.id, userName: user?.name });
 
@@ -409,7 +409,7 @@ function Whiteboard() {
       const axios = (await import("axios")).default;
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/room/save",
+        "https://collaborative-whiteboard-vsed.onrender.com/api/room/save",
         { roomId, canvasData: dataUrl },
         {
           headers: {
